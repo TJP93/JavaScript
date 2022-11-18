@@ -20,8 +20,11 @@ class Quadratic {
         // and 
         let plusSolution = (((-1 * this.b) + Math.sqrt(Math.pow(this.b,2)) - (4 * this.a * this.c)) / (2 / this.a));
         let minusSolution = (((-1 * this.b) - Math.sqrt(Math.pow(this.b,2)) - (4 * this.a * this.c)) / (2 / this.a));
-        let status = true; // or false if failed
-        
+        let status = false; // or false if failed
+        if (plusSolution != NaN || minusSolution != NaN) {
+            status = true;
+        }
+
         return {
             solved : status,
             solutionValues: [plusSolution, minusSolution ],
