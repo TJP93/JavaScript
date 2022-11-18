@@ -18,8 +18,8 @@ class Quadratic {
 
         // use the formula to obtain two solutions
         // and 
-        let plusSolution = (((-1 * this.b) + Math.sqrt(Math.pow(this.b,2)) - (4 * this.a * this.c)) / (2 / this.a));
-        let minusSolution = (((-1 * this.b) - Math.sqrt(Math.pow(this.b,2)) - (4 * this.a * this.c)) / (2 / this.a));
+        let plusSolution = (((-1 * this.b) + Math.sqrt(Math.pow(this.b,2)) - (4 * this.a * this.c)) / (2 * this.a));
+        let minusSolution = (((-1 * this.b) - Math.sqrt(Math.pow(this.b,2)) - (4 * this.a * this.c)) / (2 * this.a));
         let status = false; // or false if failed
         if (plusSolution != NaN || minusSolution != NaN) {
             status = true;
