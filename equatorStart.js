@@ -9,13 +9,17 @@ class Quadratic {
 
     evaluate(x){
         // compute value = a x squared + b x + c
+        let value = this.a*Math.pow(x,2) + (this.b*x) + this.c;
         return value;
-    }
 
+    }
+    
     solveZero(){
 
         // use the formula to obtain two solutions
         // and 
+        let plusSolution = (((-1 * this.b) + Math.sqrt(Math.pow(this.b,2)) - (4 * this.a * this.c)) / (2 / this.a));
+        let minusSolution = (((-1 * this.b) - Math.sqrt(Math.pow(this.b,2)) - (4 * this.a * this.c)) / (2 / this.a));
         let status = true; // or false if failed
         
         return {
@@ -29,7 +33,6 @@ class Quadratic {
        return this.a + "x^2 + " + this.b + "x + " + this.c;
    }
 };
-
 
 function displaySolution( solution ) {
     if ( solution.solved){ 
@@ -54,13 +57,12 @@ function verifySolution( quadratic, solution ) {
         console.log(solution.error);
     }   
 }
-
+ 
 let goodQuadratic = new Quadratic(1, -5, 6);
+// console.log(goodQuadratic.evaluate(50))
 let goodSolution = goodQuadratic.solveZero();
 displaySolution(goodSolution );
 verifySolution(goodQuadratic, goodSolution);
-
-
 
 let badQuadratic = new Quadratic( 0, -5, 6 );
 let badSolution = badQuadratic.solveZero();
